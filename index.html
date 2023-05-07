@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+    <title>Wedding Invitation</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <!-- Content wedding -->
+      <div class="content-img content-img-1">
+        <img src="images/savethedate.jpg" alt="savethedate" />
+      </div>
+
+      <div class="content-img content-img-2">
+        <img src="images/info.jpg " alt="Information" />
+      </div>
+
+      <div class="content-img content-img-3">
+        <div class="component-name">
+          <span id="name"></span>
+        </div>
+        <img src="images/party.jpg" alt="party" />
+      </div>
+    </div>
+
+    <!-- custom -->
+    <canvas id="canvas"></canvas>
+    <div class="actionAudio">
+      <p>Click to play music.</p>
+      <div class="iconVolume"><ion-icon name="volume-mute"></ion-icon></div>
+    </div>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+
+  <script src="./index.js"></script>
+  <script src="./animate.js"></script>
+</html>

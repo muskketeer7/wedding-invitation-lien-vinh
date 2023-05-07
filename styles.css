@@ -1,0 +1,263 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'lobster';
+    src: url('./resources/Lobster/Lobster-Regular.ttf') format('truetype');
+
+}
+
+:root {
+    --Color-bgr-01: white;
+    --Color-bgr-02: #ebd2af83;
+    --Color-bgr-03: #925620;
+
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+}
+
+body {
+    background: var(--Color-bgr-02);
+    user-select: none;
+    max-width: 100vw;
+    height: 100vh;
+    animation-name: showBgr;
+    animation-duration: 3s;
+    position: relative;
+}
+
+.main {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main div.content-img {
+    width: 30%;
+    height: 80%;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 4px;
+    box-shadow: 6px 6px 12px var(--Color-bgr-03);
+    transition: all 0.5s ease-in-out;
+}
+
+
+.content-img-1 {
+    z-index: 3;
+    left: 0;
+    animation-name: showImages1;
+    animation-duration: 2.5s;
+
+}
+
+.content-img-2 {
+    z-index: 2;
+    animation-name: showImages2;
+    animation-duration: 2.3s;
+}
+
+.content-img-3 {
+    z-index: 1;
+    right: 0;
+    animation-name: showImages3;
+    animation-duration: 2s;
+}
+
+.main div.content-img img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#name {
+    top: 18%;
+    right: 50%;
+    position: absolute;
+    z-index: 99;
+    font-size: 1.6em;
+    transform: translateX(50%);
+    text-transform: capitalize;
+    font-family: lobster;
+    color: rgba(212, 56, 51, 0.952);
+}
+
+.component-name {
+    background-color: rgba(255, 99, 71, 0.267);
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.actionAudio {
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    position: fixed;
+    bottom: 3vh;
+    right: 5vw;
+    font-family: lobster;
+
+    border-radius: 50px;
+    box-shadow: 0 2px 6px 1px var(--Color-bgr-03);
+
+    opacity: .7;
+}
+
+.actionAudio div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50px;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--Color-bgr-01);
+}
+
+.actionAudio div ion-icon {
+    color: tomato;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+.actionAudio p {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50px;
+    background-color: var(--Color-bgr-01);
+    box-shadow: 0 2px 6px 1px var(--Color-bgr-03);
+
+    overflow: hidden;
+}
+
+@keyframes showImages1 {
+    0% {
+        left: -10%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes showImages2 {
+    0% {
+        left: 10%;
+    }
+
+    100% {
+        left: 35%;
+    }
+}
+
+@keyframes showImages3 {
+    0% {
+        left: -10%;
+    }
+
+    100% {
+        left: 70%;
+    }
+}
+
+@keyframes showBgr {
+    0% {
+        background: var(--Color-bgr-01);
+    }
+
+    100% {
+        background: var(--Color-bgr-02);
+    }
+}
+
+@keyframes scaleImages {
+    0% {
+        transform: scale(.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main {
+        flex-direction: column;
+        justify-content: space-around;
+        height: calc(100vh * 3);
+    }
+
+
+    .main div.content-img {
+        width: 90vw;
+        height: 95vh;
+        position: relative;
+        animation-name: scaleImages;
+        animation-duration: 1.6s;
+    }
+
+
+    .content-img-1 {
+        order: 1;
+    }
+
+    .content-img-2 {
+        order: 2;
+    }
+
+    .content-img-3 {
+        order: 3;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    body {
+        background: var(--Color-bgr-02);
+        animation: none;
+    }
+
+    .main {
+        width: 100%;
+        height: calc(100vh *3);
+    }
+
+    .main div.content-img {
+        width: 90%;
+        height: 80vh !important;
+        box-shadow: 0px 0px 20px 4px var(--Color-bgr-03);
+    }
+
+    #name {
+        font-size: 1.3em;
+    }
+}
