@@ -8,6 +8,10 @@ $(document).ready(function () {
             var url_string = window.location.href;
             var url = new URL(url_string);
             var name = url.searchParams.get("name");
+            var rest = url.searchParams.get("rest");
+            if (rest == 1) {
+                name += " +";
+            }
             document.getElementById("name").innerText = name;
         }, 100);
     }
