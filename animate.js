@@ -2,7 +2,7 @@
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     things = [],
-    thingsCount = (window.innerWidth >= 765) ? 30 : 10,
+    thingsCount = (window.innerWidth >= 765) ? 33 : 13,
     mouse = {
         x: -100,
         y: -100
